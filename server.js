@@ -13,7 +13,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -60,4 +61,5 @@ app.use(function(err, req, res, next) {
 app.use(function (req,res,next){
     res.header('Access-Control-Allow-Origin',"*");
 });
+app.listen(port, ip);
 module.exports = app;
