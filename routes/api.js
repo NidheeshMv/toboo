@@ -11,9 +11,9 @@ var fs = require('fs');
 var mv = require('mv');
 var pool = mysql.createPool({
     connectionLimit: 100, //important
-    host: 'localhost',
-    user: 'root',
-    password: 'mysql@123',
+    host: 'toboonew.ccgoamilxspp.us-west-2.rds.amazonaws.com',
+    user: 'toboo123',
+    password: 'toboo123',
     database: 'toboo',
     debug: false
 });
